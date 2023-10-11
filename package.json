@@ -16,7 +16,7 @@
     "url": "git+ssh://git@github.com/evan-pieper/project3-spell-craft.git"
   },
   "author": "",
-  "license": "(MIT)",
+  "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.3.0"
   },
