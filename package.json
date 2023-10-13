@@ -23,5 +23,7 @@
   "bugs": {
     "url": "https://github.com/evan-pieper/project3-spell-craft/issues"
   },
-  "homepage": "https://github.com/evan-pieper/project3-spell-craft#readme"
+  "homepage": "https://github.com/evan-pieper/project3-spell-craft#readme",
+  "dependencies": {
+  }
 }
