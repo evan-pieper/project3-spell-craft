@@ -34,6 +34,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCard(cardText: String!, cardAuthor: String!, cardTitle: String!): Card
+    removeCard(cardId: ID!): Card
 }
 `;
 

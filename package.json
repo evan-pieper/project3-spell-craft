@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/project3-spell-craft/server.js --ignore client",
+    "start": "node C:/users/fireb/bootcamp/project3-spell-craft/server/server.js --ignore client",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm install && cd ../client && npm install",
     "seed": "cd client && npm seed",
@@ -25,5 +25,7 @@
   },
   "homepage": "https://github.com/evan-pieper/project3-spell-craft#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2"
   }
 }

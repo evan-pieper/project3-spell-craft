@@ -58,29 +58,23 @@ const resolvers = {
 
             return card;
     },
-        addComment: async (parent, { cardId, commentText, commentAuthor }) => {
-            return Card().findOneAndUpdate(
-                { _id: cardId },
-                {
-                    $addToSet: { comments: { commentText, commentAuthor } },
-                },
-                {
-                    new: true,
-                    runValidators: true,
-                }
-            );
-    },
+       
         removeCard: async (parent, { cardId }) => {
-            return Card().findOneAndDelete({ _id: cardId });
+            if (context.user) {
+                const card = await Card().findOneAndDelete({
+                    _id: cardId,
+                    cardAuthor: context.user.username,
+         });
+
+         await User().findOneAndUpdate(
+             { username: context.user.username },
+             { $pull: { cards: card._id } }
+         );
+
+            return card;
+    }
     },
-        removeComment: async (parent, { cardId, commentId }) => {
-            return Card().findOneAndUpdate(
-                { _id: cardId },
-                { $pull: { comments: { _id: commentId } } },
-                { new: true }
-            );
-    },
-    },
+},
 };
 
 module.exports = resolvers;

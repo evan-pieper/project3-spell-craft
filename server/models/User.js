@@ -45,7 +45,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('cardCount').get(function () {
+userSchema.virtual('cardCounts').get(function () {
     return this.cards.length;
 });
 

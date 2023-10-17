@@ -18,7 +18,11 @@ const cardSchema = new Schema({
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp)
-    }
+    },
+    cardRemove: {
+        type: Boolean,
+        default: false
+    },
 });
 
 const Card = model('Card', cardSchema);
