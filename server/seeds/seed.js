@@ -1,17 +1,17 @@
 const db = require('../config/connection');
 
-const { Card, Index, User } = require('../models');
+const { Card, User } = require('../models');
 
 const userSeedData = require('./userSeedData.json');
 
 db.once('open', async () => {
   await Card.deleteMany({});
-  await Index.deleteMany({});
   await User.deleteMany({});
 
 
   const users = await User.insertMany(userSeedData);
+  const cards = await Card.insertMany(cardSeedData);
 
-  console.log('Technologies seeded!');
+  console.log('Database seeded!');
   process.exit(0);
 });
