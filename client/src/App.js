@@ -22,4 +22,11 @@ function App() {
     );
 }
 
+/*<div>
+<Routes>
+<Route exact path='/' component={Home} />
+</Routes>
+</div>
+*/
+
 export default App;

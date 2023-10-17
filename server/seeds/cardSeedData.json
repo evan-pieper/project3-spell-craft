@@ -1,0 +1,18 @@
+[
+    {
+        "cardText": "draw two cards",
+        "cardAuthor": "Bob",
+        "cardCreated": "2019-03-01T00:00:00.000Z"
+    },
+    {
+        "cardText": "deal 3 damage",
+        "cardAuthor": "Bob",
+        "cardCreated": "2019-03-01T00:00:00.000Z"
+    },
+    {
+        "cardText": "draw two cards",
+        "cardAuthor": "Bob",
+        "cardCreated": "2019-03-01T00:00:00.000Z"
+    }
+
+]
