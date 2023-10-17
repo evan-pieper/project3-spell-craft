@@ -3,6 +3,7 @@ const db = require('../config/connection');
 const { Card, User } = require('../models');
 
 const userSeedData = require('./userSeedData.json');
+const cardSeedData = require('./cardSeedData.json');
 
 db.once('open', async () => {
   await Card.deleteMany({});
