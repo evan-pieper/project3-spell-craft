@@ -4,6 +4,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 import Home from './pages/Home';
+import Login from './pages/Login';
 
 
 const client = new ApolloClient({
@@ -21,6 +22,8 @@ function App() {
                     </Switch>*/}
                     <Routes>
                         <Route path='/' element={<Home />} />
+
+                        <Route path='/login' element={<Login />} />
                     </Routes>
                 </div>
             </Router>
