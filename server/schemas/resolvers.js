@@ -36,13 +36,13 @@ const resolvers = {
 
             if (!user) {
                 throw new AuthenticationError('No user found with this email address');
-    }
+            }
 
-        const correctPw = await user.isCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
                 throw new AuthenticationError('Incorrect credentials');
-    }
+            }
 
         const token = signToken(user);
 
@@ -58,7 +58,7 @@ const resolvers = {
 
             return card;
     },
-        addComment: async (parent, { cardId, commentText, commentAuthor }) => {
+/*       addComment: async (parent, { cardId, commentText, commentAuthor }) => {
             return Card().findOneAndUpdate(
                 { _id: cardId },
                 {
@@ -69,17 +69,17 @@ const resolvers = {
                     runValidators: true,
                 }
             );
-    },
+        }, 
         removeCard: async (parent, { cardId }) => {
             return Card().findOneAndDelete({ _id: cardId });
-    },
+    } ,
         removeComment: async (parent, { cardId, commentId }) => {
             return Card().findOneAndUpdate(
                 { _id: cardId },
                 { $pull: { comments: { _id: commentId } } },
                 { new: true }
             );
-    },
+    }, */
     },
 };
 
