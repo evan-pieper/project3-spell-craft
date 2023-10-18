@@ -29,7 +29,7 @@ class AuthService {
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/');
+        window.location.assign('/'); // could replace with react router dom navigation
     }
 
     logout() {
@@ -37,3 +37,5 @@ class AuthService {
         window.location.reload();
     }
 }
+
+export default new AuthService();

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node C:/users/fireb/bootcamp/project3-spell-craft/server/server.js --ignore client",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start": "node server/server.js --ignore client",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm install && cd ../client && npm install",
     "seed": "cd client && npm seed",
     "build": "cd client && npm run build",
