@@ -19,10 +19,6 @@ const userSchema = new Schema({
         required: 'You need to provide a password!',
         minlength: 5
     },
-    cardCount: {
-        type: Number,
-        default: 0
-    },
     cards: [
         {
             type: Schema.Types.ObjectId,

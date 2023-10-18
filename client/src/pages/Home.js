@@ -1,7 +1,13 @@
-import React from "react";
-import { useQuery } from '@apollo/client';
+import React, { useState, useEffect } from 'react';
+//import { Link } from 'react-router-dom';
 
-import { QUERY_CARDS, QUERY_ME } from '../utils/queries';
+const Home = () => {
+    return (
+      <div>
+        <h1>Here is the homepage!</h1>
+      </div>
+    );
+};
 
 const Home = () => {
     const { data } = useQuery(QUERY_CARDS);

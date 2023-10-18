@@ -1,0 +1,18 @@
+[
+    {
+        "cardText": "draw two cards (seed)",
+        "cardAuthor": "admin",
+        "cardCreated": "2019-03-01T00:00:00.000Z"
+    },
+    {
+        "cardText": "deal 3 damage (seed)",
+        "cardAuthor": "admin",
+        "cardCreated": "2019-04-01T00:00:00.000Z"
+    },
+    {
+        "cardText": "draw two cards (seed)",
+        "cardAuthor": "seed 3",
+        "cardCreated": "2019-05-01T00:00:00.000Z"
+    }
+
+]
