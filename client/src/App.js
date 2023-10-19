@@ -5,7 +5,7 @@ import { Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
-
+import Signup from './pages/Signup';
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -25,7 +25,7 @@ function App() {
 
                         <Route path='/login' element={<Login />} />
 
-                        <Route path='/signup' element={<Login />} />
+                        <Route path='/signup' element={<Signup />} />
                     </Routes>
                 </div>
             </Router>
