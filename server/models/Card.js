@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const cardSchema = new Schema({
+const cardSchema = new Schema({  //create the Card schema so mongoose knows how to work with the data
     cardText: {
         type: String,
         required: 'You need to provide text for this card!',
@@ -14,7 +14,7 @@ const cardSchema = new Schema({
         required: 'You need to provide an author for this card!',
         trim: true
     },
-    cardCreated: {
+    cardCreated: {  //consider making a second value for the last date the card was modified
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp)
