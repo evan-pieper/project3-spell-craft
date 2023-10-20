@@ -1,19 +1,13 @@
 import { gql } from '@apollo/client';
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {  //this is the mutation that will be used to add a user
-    addUser(username: $username, password: $password, email: $email) {
-      username
-      password
-      createdAt
-      cards {
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
         _id
-        cardText
-        cardAuthor
-        createdAt
+        username
       }
     }
   }
 `;
-
-module.exports = ADD_USER;  //export the ADD_USER mutation
