@@ -78,7 +78,7 @@ const Login = (props) => {
                 </button>
               </form>
             )}
-
+<Link to="/signup">Don't have an account?</Link>
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}

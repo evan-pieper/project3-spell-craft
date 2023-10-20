@@ -5,21 +5,25 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return User().find().populate('cards');
+            return User.find().populate('cards');
     },
         user: async (parent, { username }) => {
-            return User().findOne({ username }).populate('cards');
+            return User.findOne({ username }).populate('cards');
     },
-        cards: async (parent, { username }) => {
+        cards: async (parent, { username }, context) => {
+            try{
             const params = username ? { username } : {};
-            return Card().find(params).sort({ createdAt: -1 });
+            return Card.find(params).sort({ createdAt: -1 });
+            }catch(e){
+                console.log(e);
+            }
     },
         card: async (parent, { cardId }) => {
-            return Card().findOne({ _id: cardId });
+            return Card.findOne({ _id: cardId });
     },
         me: async (parent, args, context) => {
             if (context.user) {
-                return User().findOne({ _id: context.user._id }).populate('cards');
+                return User.findOne({ _id: context.user._id }).populate('cards');
     }
             throw new AuthenticationError('You need to be logged in!');
     },
@@ -27,7 +31,7 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
-            const user = User().create({ username, email, password });
+            const user = User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
     },
@@ -49,7 +53,7 @@ const resolvers = {
         return { token, user };
     },
         addCard: async (parent, { cardText, cardAuthor, cardTitle }) => {
-            const card = await Card().create({ cardText, cardAuthor, cardTitle });
+            const card = await Card.create({ cardText, cardAuthor, cardTitle });
 
             await User().findOneAndUpdate(
                 { username: cardAuthor },
@@ -61,7 +65,7 @@ const resolvers = {
        
         removeCard: async (parent, { cardId }) => {
             if (context.user) {
-                const card = await Card().findOneAndDelete({
+                const card = await Card.findOneAndDelete({
                     _id: cardId,
                     cardAuthor: context.user.username,
          });

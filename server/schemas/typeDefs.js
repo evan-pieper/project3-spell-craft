@@ -5,16 +5,16 @@ type User {
     _id: ID
     username: String
     email: String
-    password: String
     cards: [Card]
+    cardCount: Int
 }
 
 type Card {
     _id: ID
     cardText: String
     cardAuthor: String
-    createdAt: String
-    cardTitle: String
+    cardCreated: String
+    cardRemove: Boolean
 }
 
 type Auth {

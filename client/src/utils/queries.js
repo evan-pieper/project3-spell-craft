@@ -12,6 +12,7 @@ export const QUERY_USER = gql`
                 cardText
                 cardAuthor
                 cardCreated
+                cardRemove
             }
         }
     }
@@ -36,7 +37,7 @@ export const QUERY_ME = gql`
 
 export const QUERY_CARDS = gql`
     query getCards {
-       card {
+       cards {
            _id
            cardText
            cardAuthor
