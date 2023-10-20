@@ -78,6 +78,7 @@ const Signup = () => {
     ); */
     return (
       <div>
+        <Link to="/login">Already signed up? Click here to log in instead!</Link>  { /*This is a link to the login page*/}
       </div>
     );
 };
