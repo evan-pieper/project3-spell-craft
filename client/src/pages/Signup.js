@@ -40,6 +40,7 @@ const Signup = () => {
     
     <div>
       <h1>Here is the Signup Page!</h1>
+      <Link to="/login">Click Here to Login Instead!</Link>  {/* This is a link to the login page */}
       {data ? (
               <p>
                 Success! You may now head{' '}
