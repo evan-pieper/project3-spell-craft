@@ -29,6 +29,8 @@ const Login = (props) => {
   
         Auth.login(data.login.token);
       } catch (e) {
+        console.log("error bellow");
+        console.log(e);
         console.error(e);
       }
   
