@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const { authMiddleware } = require('./utils/auth');
+//const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -11,10 +11,10 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware,
+    //context: authMiddleware,
 });
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
@@ -25,9 +25,25 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+/*app.post('/signup', async (req, res) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const user = new User({
+            username: req.body.username,
+            password: hashedPassword
+        });
+
+        const savedUser = await user.save();
+
+        res.json({ userId: savedUser._id });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});*/
+
 const startApolloServer = async () => {
     await server.start();
-    server.applyMiddleware({ app });
+    //server.applyMiddleware({ app });
 
     db.once('open', () => {
         app.listen(PORT, () => {

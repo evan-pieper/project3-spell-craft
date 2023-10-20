@@ -12,7 +12,6 @@ type User {
 type Card {
     _id: ID
     cardText: String
-    cardAuthor: String
     createdAt: String
     cardTitle: String
 }

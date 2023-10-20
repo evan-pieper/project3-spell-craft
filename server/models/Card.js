@@ -10,9 +10,9 @@ const cardSchema = new Schema({  //create the Card schema so mongoose knows how 
         trim: true
     },
     cardAuthor: {
-        type: String,
+        type: Schema.Types.ObjectId, //this will hold the _id of the user who created the card, which we will use to pull in the user data for a card
         required: 'You need to provide an author for this card!',
-        trim: true
+        ref: 'User'  //this tells the schema which document to search to find the right user
     },
     cardCreated: {  //consider making a second value for the last date the card was modified
         type: Date,
