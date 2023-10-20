@@ -2,6 +2,7 @@
 //import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CARDS, QUERY_ME } from '../utils/queries';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const { data } = useQuery(QUERY_CARDS);
@@ -13,7 +14,31 @@ const Home = () => {
 
     return (
         <main>
-
+          <div className="flex-row justify-center">
+            <div className="col-12 col-md-8 mb-3">
+              {user ? (
+                <div className="card mb-3">
+                  <p className="card-header">
+                    Welcome back, {user.username}!
+                  </p>
+                  <div className="card-body">
+                    <Link to={`/profile/${user.username}`} style={{ fontWeight: 700 }}>
+                      View {user.username}'s profile.
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="card mb-3">
+                  <p className="card-header">Welcome to Flashcard Pro!</p>
+                  <div className="card-body">
+                    <Link to="/login">
+                      Login
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </main>
     );
 };
