@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -27,7 +29,7 @@ const Signup = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...formState },
+        variables: formState ,
       });
 
       Auth.login(data.addUser.token);
@@ -36,12 +38,13 @@ const Signup = () => {
     }
   };
 
-  return(
-    
-    <div>
-      <h1>Here is the Signup Page!</h1>
-      <Link to="/login">Click Here to Login Instead!</Link>  {/* This is a link to the login page */}
-      {data ? (
+  return (
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <div className="card-body">
+            {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
@@ -87,7 +90,10 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
-    </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 

@@ -5,15 +5,16 @@ type User {
     _id: ID
     username: String
     email: String
-    password: String
     cards: [Card]
+    cardCount: Int
 }
 
 type Card {
     _id: ID
     cardText: String
-    createdAt: String
-    cardTitle: String
+    cardAuthor: String
+    cardCreated: String
+    cardRemove: Boolean
 }
 
 type Auth {
@@ -33,6 +34,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addCard(cardText: String!, cardAuthor: String!, cardTitle: String!): Card
+    removeCard(cardId: ID!): Card
 }
 `;
 

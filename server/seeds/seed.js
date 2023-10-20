@@ -6,12 +6,11 @@ const userSeedData = require('./userSeedData.json');
 const cardSeedData = require('./cardSeedData.json');
 
 db.once('open', async () => {
-  await Card.deleteMany({});  //delete all the data from the database before seeding
+  await Card.deleteMany({});
   await User.deleteMany({});
 
-  const createdUsers = await User.insertMany(userSeedData);  //create the users
-  //const createdCards = await Card.insertMany(cardSeedData);  //create the cards
-  //console.log(createdCards);
+  const users = await User.insertMany(userSeedData);
+  const cards = await Card.insertMany(cardSeedData);
 
   console.log('Database seeded!');
   process.exit(0);
