@@ -1,0 +1,17 @@
+[
+    {
+        "username": "admin",
+        "email": "seed@seed.com",
+        "password": "admin"
+    },
+    {
+        "username": "seed 2",
+        "email": "seed2@seed.com",
+        "password": "seed2pass"
+    },
+    {
+        "username": "seed 3",
+        "email": "seed3@seed.com",
+        "password": "seed3pass"
+    }
+]
