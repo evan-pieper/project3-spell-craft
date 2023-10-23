@@ -27,6 +27,6 @@ MIT License
 
 ## Links
 
-[GitHub Repo]()
-[Deployed App](https://spell-craft.herokuapp.com/)
+[GitHub Repo](https://github.com/evan-pieper/project3-spell-craft.git)
+[Deployed App](https://spellcast-d41ffbdf0b5f.herokuapp.com/)
 
