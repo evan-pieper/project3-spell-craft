@@ -45,4 +45,3 @@ export const REMOVE_CARD = gql`
         }
     }
 `;
-
