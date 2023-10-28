@@ -15,32 +15,16 @@ const server = new ApolloServer({
     context: authMiddleware,
 });
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false })); // not sure if false or true is needed. I think it might be helpful to be able to parse nested objects, but I'll leave it as false for now.
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {  // if we're in production, serve client/build as static assets
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
-
-/*app.post('/signup', async (req, res) => {
-    try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        const user = new User({
-            username: req.body.username,
-            password: hashedPassword
-        });
-
-        const savedUser = await user.save();
-
-        res.json({ userId: savedUser._id });
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-});*/
 
 const startApolloServer = async () => {
     await server.start();
