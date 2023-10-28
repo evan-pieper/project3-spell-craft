@@ -9,8 +9,8 @@ db.once('open', async () => {
   await Card.deleteMany({});
   await User.deleteMany({});
 
-  const users = await User.insertMany(userSeedData);
-  const cards = await Card.insertMany(cardSeedData);
+  const users = await User.create(userSeedData);
+  const cards = await Card.create(cardSeedData);
 
   console.log('Database seeded!');
   process.exit(0);
