@@ -10,7 +10,7 @@ const Home = () => {
     // console.log(cards);
     const { data: userData } = useQuery(QUERY_ME);
     const user = userData?.me || {};
-    console.log(user);
+    //console.log(user);
 
     return (
         <main>
