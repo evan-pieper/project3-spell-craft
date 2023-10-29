@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
+import LoginButton from './components/LoginButton';
+
 const httpLink = createHttpLink({
     uri: '/graphql',
   });
@@ -37,7 +39,8 @@ function App() {
                 <div>
                     <div className = 'nav' id = 'nav'>
                         <Link to = '/'>Home</Link>
-                        <Link to = '/login'>Login</Link>
+                        {/*LoginButton*/}
+                        <LoginButton />
                         <Link to = '/signup'>Signup</Link>
                     </div>
                     <Routes>

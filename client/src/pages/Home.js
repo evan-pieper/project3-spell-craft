@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_CARDS, QUERY_ME } from '../utils/queries';
 import { Link } from 'react-router-dom';
 
+import GameCard from '../components/GameCard';
+
 const Home = () => {
     // const { data } = useQuery(QUERY_CARDS);
     // const cards = data?.cards || [];
