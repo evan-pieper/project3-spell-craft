@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, useQuery } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Routes } from 'react-router-dom/dist/umd/react-router-dom.development';
-import { Link } from 'react-router-dom';
-import { QUERY_ME } from './utils/queries';
 
 import { AuthProvider } from './components/AuthContext';
 
@@ -12,8 +10,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 
-import LoginButton from './components/LoginButton';
-import LogoutButton from './components/LogoutButton';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
