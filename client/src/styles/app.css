@@ -38,3 +38,50 @@ body{
     display: flex;
     flex-direction: column;
 }
+
+/* _________________________Main Content bellow________________________________________ */
+
+
+
+/*____________________________Navbar bellow_____________________________________________*/
+
+#navbar {
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    height: 10vh;
+  }
+  
+  #navbar > h1, a {
+    margin: 0;
+    padding: 0;
+    color: var(--navbar-text-color);
+    font-size: 2em;
+    font-weight:normal;
+    text-decoration: none;
+  }
+  
+  #navbar > a:last-child {
+    margin-right: 1em;
+  }
+  
+  #navbar > h1 {
+    margin-left: 1em;
+    font-size: 2.5em;
+    font-weight: bolder;
+  }
+  
+  #navbar > a:hover {
+    color: grey;
+  }
+  
+  #navbar >a.activeLink {
+    color: white;
+  }
+  
+  .active {
+    color: grey;
+  }
