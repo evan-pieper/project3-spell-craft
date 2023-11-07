@@ -1,0 +1,40 @@
+:root{
+    --navbar-text-color: #f9f9f9;
+    --navbar-background-color: #001F39;
+    font-size: 16px;
+    /* default font size is 16, so by default 1 em is 16 px, and 1 rem is always 16px*/
+    background-color: lightblue;
+    color: #001F39;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #001F39;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* 100vh is 100% of the viewport height */
+    width: 100%;
+}
+
+.mainContent {
+    flex: 1;
+    /* flex: 1 means that the mainContent will take up all the space left after the navbar and footer */
+    width: 100%;
+}
+  
+.row {
+    display: flex;
+    flex-direction: row;
+}
+  
+.col {
+    display: flex;
+    flex-direction: column;
+}

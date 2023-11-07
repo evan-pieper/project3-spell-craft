@@ -31,7 +31,7 @@ const Home = () => {
                 </div>
               ) : (
                 <div className="card mb-3">
-                  <p className="card-header">Welcome to Flashcard Pro!</p>
+                  <p className="card-header">Welcome to Spell/Craft!</p>
                   <div className="card-body">
                     <Link to="/login">
                       Login
